@@ -13,7 +13,7 @@
         <TabControl x:Name="tabControl1" HorizontalAlignment="Left" Height="225" Margin="10,10,0,0" VerticalAlignment="Top" Width="272">
             <TabItem x:Name="tabItem1" Header="About">
                 <Grid Background="#FFE5E5E5">
-                    <TextBox x:Name="txtAbout" TextWrapping="Wrap" Text="TechBingo&#xD;&#xA;The bingo game displayer&#xD;&#xA;WPF version&#xD;&#xA;Copyright 2019 (c) Martin C." />
+                    <TextBox x:Name="txtAbout" TextWrapping="Wrap" Text="TechBingo&#xD;&#xA;The Bingo game displayer&#xD;&#xA;The Bingo WPF app, based on VB.net&#xD;&#xA;Under Construction &#xD;&#xA;by Martin C.&#xD;&#xA;Copyright 2019 (c) Martin C. " />
                 </Grid>
             </TabItem>
             <TabItem x:Name="tabItem2" Header="Help">

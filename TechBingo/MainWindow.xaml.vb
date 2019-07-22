@@ -6,6 +6,18 @@ Class MainWindow
     'Dim controls As Reflection.Assembly = Reflection.Assembly.GetAssembly(GetType(Control))
     Public Shared dm As Boolean = False
 
+    Private Sub MainWindow_Loaded(sender As Object, e As RoutedEventArgs) Handles Me.Loaded
+        'Help file
+        If Not File.Exists("HELP") Then
+            File.WriteAllBytes("HELP", My.Resources.HELP)
+        End If
+
+        'License file
+        If Not File.Exists("LICENSE") Then
+            File.WriteAllBytes("LICENSE", My.Resources.LICENSE)
+        End If
+    End Sub
+
     Private Sub Button_Click(sender As Object, e As RoutedEventArgs) Handles button.Click
         If txtObj01.Text = Nothing Or txtObj02.Text = Nothing Or txtObj03.Text = Nothing Or txtObj04.Text = Nothing Or txtObj05.Text = Nothing Or txtObj06.Text = Nothing Or txtObj07.Text = Nothing Or txtObj08.Text = Nothing Or txtObj09.Text = Nothing Or txtObj10.Text = Nothing Or txtObj11.Text = Nothing Or txtObj12.Text = Nothing Or txtObj13.Text = Nothing Or txtObj14.Text = Nothing Or txtObj15.Text = Nothing Or txtObj16.Text = Nothing Or txtObj17.Text = Nothing Or txtObj18.Text = Nothing Or txtObj19.Text = Nothing Or txtObj20.Text = Nothing Or txtObj21.Text = Nothing Or txtObj22.Text = Nothing Or txtObj23.Text = Nothing Or txtObj24.Text = Nothing Or txtObj25.Text = Nothing Or txtTitle.Text = Nothing Then
             lblTitle.Foreground = System.Windows.Media.Brushes.Red
@@ -249,4 +261,5 @@ Class MainWindow
         Background = maincb
 
     End Sub
+
 End Class

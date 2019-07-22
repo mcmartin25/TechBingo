@@ -1,4 +1,5 @@
-﻿Public Class About
+﻿Imports System.IO
+Public Class About
     Private Sub ButtonOK_Click(sender As Object, e As RoutedEventArgs) Handles buttonOK.Click
         Hide()
     End Sub
@@ -20,6 +21,20 @@
             maincb.Color = ColorConverter.ConvertFromString("#ffffff")
         End If
 
+        'Help file
+        If File.Exists("HELP") Then
+            txtHelp.Text = File.ReadAllText("HELP")
+        Else
+            txtHelp.Text = "Cannot read help resources"
+        End If
+
+        'License file
+        If File.Exists("LICENSE") Then
+            txtLicense.Text = File.ReadAllText("LICENSE")
+        Else
+            txtLicense.Text = "Cannot read help resources"
+        End If
+
         '25 buttons content text
         txtAbout.Foreground = tcb
         txtHelp.Foreground = tcb
@@ -33,4 +48,5 @@
         'background color
         Background = maincb
     End Sub
+
 End Class

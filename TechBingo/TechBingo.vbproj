@@ -142,6 +142,8 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <AppDesigner Include="My Project\" />
+    <None Include="Resources\HELP" />
+    <None Include="Resources\LICENSE" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
