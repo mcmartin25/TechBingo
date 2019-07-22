@@ -1,0 +1,41 @@
+﻿<Window x:Class="Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TechBingo"
+        mc:Ignorable="d"
+        Title="HNS" Height="377.333" Width="525" ResizeMode="CanMinimize">
+    <Grid>
+        <Button x:Name="btnObj01" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" Margin="10,26,0,0" Height="50" FontSize="10"/>
+        <Button x:Name="btnObj02" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" Margin="110,26,0,0" Height="50" FontSize="10"/>
+        <Button x:Name="btnObj03" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" Margin="210,26,0,0" Height="50" FontSize="10"/>
+        <Button x:Name="btnObj04" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" Margin="310,26,0,0" Height="50" FontSize="10"/>
+        <Button x:Name="btnObj05" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" Margin="410,26,0,0" Height="50" FontSize="10"/>
+        <Button x:Name="btnObj06" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" Margin="10,81,0,0" Height="50" FontSize="10"/>
+        <Button x:Name="btnObj07" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" Margin="110,81,0,0" Height="50" FontSize="10"/>
+        <Button x:Name="btnObj08" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" Margin="210,81,0,0" Height="50" FontSize="10"/>
+        <Button x:Name="btnObj09" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" Margin="310,81,0,0" Height="50" FontSize="10"/>
+        <Button x:Name="btnObj10" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" Margin="410,81,0,0" Height="50" FontSize="10"/>
+        <Button x:Name="btnObj11" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" Margin="10,136,0,0" Height="50" FontSize="10"/>
+        <Button x:Name="btnObj12" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" Margin="110,136,0,0" Height="50" FontSize="10"/>
+        <Button x:Name="btnObj13" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" Margin="210,136,0,0" Height="50" FontSize="10"/>
+        <Button x:Name="btnObj14" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" Margin="310,136,0,0" Height="50" FontSize="10"/>
+        <Button x:Name="btnObj15" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" Margin="410,136,0,0" Height="50" FontSize="10"/>
+        <Button x:Name="btnObj16" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" Margin="10,191,0,0" Height="50" FontSize="10"/>
+        <Button x:Name="btnObj17" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" Margin="110,191,0,0" Height="50" FontSize="10"/>
+        <Button x:Name="btnObj18" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" Margin="210,191,0,0" Height="50" FontSize="10"/>
+        <Button x:Name="btnObj19" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" Margin="310,191,0,0" Height="50" FontSize="10"/>
+        <Button x:Name="btnObj20" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" Margin="410,191,0,0" Height="50" FontSize="10"/>
+        <Button x:Name="btnObj21" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" Margin="10,246,0,0" Height="50" FontSize="10"/>
+        <Button x:Name="btnObj22" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" Margin="110,246,0,0" Height="50" FontSize="10"/>
+        <Button x:Name="btnObj23" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" Margin="210,246,0,0" Height="50" FontSize="10"/>
+        <Button x:Name="btnObj24" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" Margin="310,246,0,0" Height="50" FontSize="10"/>
+        <Button x:Name="btnObj25" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" Margin="410,246,0,0" Height="50" FontSize="10"/>
+        <Label x:Name="labeltext" Content="HNSTitle" HorizontalAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="10,0,12,0" Width="495"/>
+        <Button x:Name="btnAbout" Content="About" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" Margin="410,317,0,0" Height="19"/>
+        <Button x:Name="btnReset" Content="Reset" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" Margin="10,317,0,0" Height="19"/>
+        <Label x:Name="labelmark" Content="0 / 25" HorizontalAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="105,301,109,0" Width="305" FontSize="20"/>
+
+    </Grid>
+</Window>

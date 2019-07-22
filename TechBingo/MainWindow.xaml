@@ -1,0 +1,45 @@
+﻿<Window x:Class="MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TechBingo"
+        mc:Ignorable="d"
+        Title="Before you begin..." Height="425.761" Width="525" ResizeMode="CanMinimize">
+    <Grid>
+        <TextBox x:Name="txtObj01" HorizontalAlignment="Left" Height="50" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" Margin="10,49,0,0"/>
+        <TextBox x:Name="txtObj02" HorizontalAlignment="Left" Height="50" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" Margin="110,49,0,0"/>
+        <TextBox x:Name="txtObj03" HorizontalAlignment="Left" Height="50" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" Margin="210,49,0,0"/>
+        <TextBox x:Name="txtObj04" HorizontalAlignment="Left" Height="50" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" Margin="310,49,0,0"/>
+        <TextBox x:Name="txtObj05" HorizontalAlignment="Left" Height="50" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" Margin="410,49,0,0"/>
+        <TextBox x:Name="txtObj06" HorizontalAlignment="Left" Height="50" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" Margin="10,104,0,0"/>
+        <TextBox x:Name="txtObj07" HorizontalAlignment="Left" Height="50" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" Margin="110,104,0,0"/>
+        <TextBox x:Name="txtObj08" HorizontalAlignment="Left" Height="50" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" Margin="210,104,0,0"/>
+        <TextBox x:Name="txtObj09" HorizontalAlignment="Left" Height="50" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" Margin="310,104,0,0"/>
+        <TextBox x:Name="txtObj10" HorizontalAlignment="Left" Height="50" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" Margin="410,104,0,0"/>
+        <TextBox x:Name="txtObj11" HorizontalAlignment="Left" Height="50" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" Margin="10,159,0,0"/>
+        <TextBox x:Name="txtObj12" HorizontalAlignment="Left" Height="50" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" Margin="110,159,0,0"/>
+        <TextBox x:Name="txtObj13" HorizontalAlignment="Left" Height="50" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" Margin="210,159,0,0"/>
+        <TextBox x:Name="txtObj14" HorizontalAlignment="Left" Height="50" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" Margin="310,159,0,0"/>
+        <TextBox x:Name="txtObj15" HorizontalAlignment="Left" Height="50" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" Margin="410,159,0,0"/>
+        <TextBox x:Name="txtObj16" HorizontalAlignment="Left" Height="50" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" Margin="10,214,0,0"/>
+        <TextBox x:Name="txtObj17" HorizontalAlignment="Left" Height="50" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" Margin="110,214,0,0"/>
+        <TextBox x:Name="txtObj18" HorizontalAlignment="Left" Height="50" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" Margin="210,214,0,0"/>
+        <TextBox x:Name="txtObj19" HorizontalAlignment="Left" Height="50" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" Margin="310,214,0,0"/>
+        <TextBox x:Name="txtObj20" HorizontalAlignment="Left" Height="50" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" Margin="410,214,0,0"/>
+        <TextBox x:Name="txtObj21" HorizontalAlignment="Left" Height="50" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" Margin="10,269,0,0"/>
+        <TextBox x:Name="txtObj22" HorizontalAlignment="Left" Height="50" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" Margin="110,269,0,0"/>
+        <TextBox x:Name="txtObj23" HorizontalAlignment="Left" Height="50" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" Margin="210,269,0,0"/>
+        <TextBox x:Name="txtObj24" HorizontalAlignment="Left" Height="50" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" Margin="310,269,0,0"/>
+        <TextBox x:Name="txtObj25" HorizontalAlignment="Left" Height="50" TextWrapping="Wrap" VerticalAlignment="Top" Width="95" Margin="410,269,0,0"/>
+        <Button x:Name="button" Content="Confirm" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" Margin="210,325,0,0"/>
+        <Label x:Name="lblTitle" Content="Type these content of your 1-25 buttons before you begin." HorizontalAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Center" Foreground="Black"/>
+        <TextBox x:Name="txtTitle" HorizontalAlignment="Left" Height="19" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" Margin="49,25,0,0"/>
+        <Label x:Name="lblTitle2" Content="Title" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,22,0,0"/>
+        <Button x:Name="btnLoad" Content="Load" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" Margin="10,325,0,0" Height="19"/>
+        <Button x:Name="btnHelp" Content="Help" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" Margin="410,325,0,0" Height="19"/>
+        <Button x:Name="btnExport" Content="Export" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" Margin="10,349,0,0" Height="19"/>
+        <Button x:Name="btnAbout" Content="About" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" Margin="410,349,0,0" Height="19"/>
+        <Button x:Name="btnDarkMode" Content="Dark Mode" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" Margin="410,373,0,0" Height="19"/>
+    </Grid>
+</Window>
