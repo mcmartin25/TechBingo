@@ -1,7 +1,41 @@
-﻿Public Class Window1
+﻿Imports System.Windows.Threading
+
+Public Class Window1
     Dim p As Integer = 0
+    Dim bingocheck As Boolean = False 'Decide to display bingo text or not
+    Dim dt As DispatcherTimer = New DispatcherTimer
+    Dim t As Integer = 0 'Timer recorder, the default set to 3
+    Dim cr As New SolidColorBrush()
+    Dim cbk As New SolidColorBrush()
+
     Private Sub Window1_Loaded(sender As Object, e As RoutedEventArgs) Handles Me.Loaded
         ''label.Content = MainWindow.txtTitle.Text
+        cr.Color = Colors.Red
+        cbk.Color = Colors.Black
+        AddHandler dt.Tick, AddressOf DispatcherTimer_Tick
+        dt.Interval = New TimeSpan(0, 0, 1)
+        dt.Stop()
+    End Sub
+
+    Public Sub DispatcherTimer_Tick(ByVal sender As Object, ByVal e As EventArgs)
+        If bingocheck = True Then
+            If t >= 3 Then
+                bingocheck = False
+                t = 0
+                labelmark.Foreground = cbk
+                labelmark.Content = p.ToString + " / 25"
+                dt.Stop()
+            Else
+                labelmark.Foreground = cr
+                labelmark.Content = "Bingo!"
+                t += 1
+
+            End If
+        End If
+        Debug.Write("bingocheck: ")
+        Debug.WriteLine(bingocheck.ToString)
+        Debug.Write("t: ")
+        Debug.WriteLine(t)
     End Sub
 
     Private Sub BtnObj01_Click(sender As Object, e As RoutedEventArgs) Handles btnObj01.Click
@@ -161,18 +195,68 @@
         btnObj21.Click, btnObj22.Click, btnObj23.Click, btnObj24.Click, btnObj25.Click
 
         'Disable button when clicks
-        If btnObj01.IsEnabled = True Then
-            p += 1
-            labelmark.Content = p.ToString + " / 25"
-            btnObj01.IsEnabled = False
-        End If
+        'If btnObj01.IsEnabled = True Then
+        'p += 1
+        'labelmark.Content = p.ToString + " / 25"
+        'btnObj01.IsEnabled = False
+        'End If
         '...
+        If bingocheck = False Then
+            'Check Bingo or not
 
-        'Check Bingo or not
-        If btnObj01.IsEnabled = False And btnObj02.IsEnabled = False And btnObj03.IsEnabled = False And btnObj04.IsEnabled = False And btnObj05.IsEnabled = False Then
-            labelmark.Content = "Bingo!"
+            'Row
+            If btnObj01.IsEnabled = False And btnObj02.IsEnabled = False And btnObj03.IsEnabled = False And btnObj04.IsEnabled = False And btnObj05.IsEnabled = False Then
+                bingocheck = True
+                dt.Start()
+            End If
+
+            If btnObj06.IsEnabled = False And btnObj07.IsEnabled = False And btnObj08.IsEnabled = False And btnObj09.IsEnabled = False And btnObj10.IsEnabled = False Then
+                bingocheck = True
+                dt.Start()
+            End If
+
+            If btnObj11.IsEnabled = False And btnObj12.IsEnabled = False And btnObj13.IsEnabled = False And btnObj14.IsEnabled = False And btnObj15.IsEnabled = False Then
+                bingocheck = True
+                dt.Start()
+            End If
+
+            If btnObj16.IsEnabled = False And btnObj17.IsEnabled = False And btnObj18.IsEnabled = False And btnObj19.IsEnabled = False And btnObj20.IsEnabled = False Then
+                bingocheck = True
+                dt.Start()
+            End If
+
+            If btnObj21.IsEnabled = False And btnObj22.IsEnabled = False And btnObj23.IsEnabled = False And btnObj24.IsEnabled = False And btnObj25.IsEnabled = False Then
+                bingocheck = True
+                dt.Start()
+            End If
+
+            'Column
+            If btnObj01.IsEnabled = False And btnObj06.IsEnabled = False And btnObj11.IsEnabled = False And btnObj16.IsEnabled = False And btnObj21.IsEnabled = False Then
+                bingocheck = True
+                dt.Start()
+            End If
+
+            If btnObj02.IsEnabled = False And btnObj07.IsEnabled = False And btnObj12.IsEnabled = False And btnObj17.IsEnabled = False And btnObj22.IsEnabled = False Then
+                bingocheck = True
+                dt.Start()
+            End If
+
+            If btnObj03.IsEnabled = False And btnObj08.IsEnabled = False And btnObj13.IsEnabled = False And btnObj18.IsEnabled = False And btnObj23.IsEnabled = False Then
+                bingocheck = True
+                dt.Start()
+            End If
+
+            If btnObj04.IsEnabled = False And btnObj09.IsEnabled = False And btnObj14.IsEnabled = False And btnObj19.IsEnabled = False And btnObj24.IsEnabled = False Then
+                bingocheck = True
+                dt.Start()
+            End If
+
+            If btnObj05.IsEnabled = False And btnObj10.IsEnabled = False And btnObj15.IsEnabled = False And btnObj20.IsEnabled = False And btnObj25.IsEnabled = False Then
+                bingocheck = True
+                dt.Start()
+            End If
+            '...
         End If
-        '...
     End Sub
 
     Private Sub BtnReset_Click(sender As Object, e As RoutedEventArgs) Handles btnReset.Click
@@ -203,6 +287,7 @@
         btnObj23.IsEnabled = True
         btnObj24.IsEnabled = True
         btnObj25.IsEnabled = True
+        dt.Stop()
     End Sub
 
     Private Sub BtnAbout_Click(sender As Object, e As RoutedEventArgs) Handles btnAbout.Click
@@ -241,26 +326,9 @@
         mainwin.txtObj23.Text = btnObj23.Content
         mainwin.txtObj24.Text = btnObj24.Content
         mainwin.txtObj25.Text = btnObj25.Content
+        dt.Stop()
         Hide()
     End Sub
 
-    Sub ButtonCheck()
-        If btnObj01.IsEnabled = False And
-            btnObj02.IsEnabled = False And
-            btnObj03.IsEnabled = False And
-            btnObj04.IsEnabled = False And
-            btnObj05.IsEnabled = False Then
-            Dim BlackBrush As New SolidColorBrush(Colors.Black)
-            labelmark.Foreground = BlackBrush
-            labelmark.Content = "Bingo!"
-        ElseIf btnObj06.IsEnabled = False And
-            btnObj07.IsEnabled = False And
-            btnObj08.IsEnabled = False And
-            btnObj09.IsEnabled = False And
-            btnObj10.IsEnabled = False Then
-            Dim BlackBrush As New SolidColorBrush(Colors.Black)
-            labelmark.Foreground = BlackBrush
-            labelmark.Content = "Bingo!"
-        End If
-    End Sub
+
 End Class

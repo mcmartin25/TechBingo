@@ -103,7 +103,9 @@ Class MainWindow
                 txtObj10.Text = System.IO.File.ReadAllLines(filename)(10)
                 txtObj11.Text = System.IO.File.ReadAllLines(filename)(11)
                 txtObj12.Text = System.IO.File.ReadAllLines(filename)(12)
-                txtObj13.Text = System.IO.File.ReadAllLines(filename)(13)
+                If cbFreeSpace.IsChecked = False Then
+                    txtObj13.Text = System.IO.File.ReadAllLines(filename)(13)
+                End If
                 txtObj14.Text = System.IO.File.ReadAllLines(filename)(14)
                 txtObj15.Text = System.IO.File.ReadAllLines(filename)(15)
                 txtObj16.Text = System.IO.File.ReadAllLines(filename)(16)
@@ -116,6 +118,8 @@ Class MainWindow
                 txtObj23.Text = System.IO.File.ReadAllLines(filename)(23)
                 txtObj24.Text = System.IO.File.ReadAllLines(filename)(24)
                 txtObj25.Text = System.IO.File.ReadAllLines(filename)(25)
+                cbFreeSpace.IsEnabled = False
+
             ElseIf File.ReadAllLines(filename).Count < 26 Then
                 MessageBox.Show("Load error! Data line not enough")
             Else
@@ -257,9 +261,21 @@ Class MainWindow
         lblTitle.Foreground = tcb
         lblTitle2.Foreground = tcb
 
+        'buttons
+        cbFreeSpace.Foreground = tcb
+
         'main app background color
         Background = maincb
 
     End Sub
 
+    Private Sub CbFreeSpace_Checked(sender As Object, e As RoutedEventArgs) Handles cbFreeSpace.Checked
+        If cbFreeSpace.IsChecked = True Then
+            txtObj13.Text = "*Free Space*"
+            txtObj13.IsEnabled = False
+        Else
+            txtObj13.Text = ""
+            txtObj13.IsEnabled = True
+        End If
+    End Sub
 End Class

@@ -9,13 +9,11 @@ Public Class About
         Dim bgcb As SolidColorBrush = New SolidColorBrush()
         Dim maincb As SolidColorBrush = New SolidColorBrush()
 
-        If MainWindow.dm = False Then
-            MainWindow.dm = True
+        If MainWindow.dm = True Then
             tcb.Color = ColorConverter.ConvertFromString("#ffffff")
             bgcb.Color = ColorConverter.ConvertFromString("#4D4D4D")
             maincb.Color = ColorConverter.ConvertFromString("#262626")
-        ElseIf MainWindow.dm = True Then
-            MainWindow.dm = False
+        ElseIf MainWindow.dm = False Then
             tcb.Color = ColorConverter.ConvertFromString("#000000")
             bgcb.Color = ColorConverter.ConvertFromString("#ffffff")
             maincb.Color = ColorConverter.ConvertFromString("#ffffff")
