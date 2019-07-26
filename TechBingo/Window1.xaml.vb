@@ -255,7 +255,18 @@ Public Class Window1
                 bingocheck = True
                 dt.Start()
             End If
-            '...
+
+            'incline
+
+            If btnObj01.IsEnabled = False And btnObj07.IsEnabled = False And btnObj13.IsEnabled = False And btnObj19.IsEnabled = False And btnObj25.IsEnabled = False Then
+                bingocheck = True
+                dt.Start()
+            End If
+
+            If btnObj05.IsEnabled = False And btnObj09.IsEnabled = False And btnObj13.IsEnabled = False And btnObj17.IsEnabled = False And btnObj21.IsEnabled = False Then
+                bingocheck = True
+                dt.Start()
+            End If
         End If
     End Sub
 

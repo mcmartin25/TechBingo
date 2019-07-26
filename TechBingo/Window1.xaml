@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TechBingo"
         mc:Ignorable="d"
-        Title="HNS" Height="377.333" Width="525" ResizeMode="CanMinimize">
+        Title="TechBingo" Height="377.333" Width="525" ResizeMode="CanMinimize">
     <Grid>
         <Button x:Name="btnObj01" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" Margin="10,26,0,0" Height="50" FontSize="10"/>
         <Button x:Name="btnObj02" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" Margin="110,26,0,0" Height="50" FontSize="10"/>
