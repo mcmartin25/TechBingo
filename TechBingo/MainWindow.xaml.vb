@@ -19,6 +19,8 @@ Class MainWindow
     Dim tlist As List(Of String) = New List(Of String)
     Private rnd As New Random()
 
+    Dim fsvar As String ' Free Space Backup before activate
+
     Private Sub MainWindow_Loaded(sender As Object, e As RoutedEventArgs) Handles Me.Loaded
         'Help file
         If Not File.Exists("HELP") Then
@@ -133,10 +135,7 @@ Class MainWindow
             'Dim number As Integer = 0
             'Dim Counter As String = System.IO.File.ReadAllLines(filename)(number)
             If File.ReadAllLines(filename).Count > 1 And File.ReadAllLines(filename).Count >= 26 Then
-                'cbFreeSpace.IsEnabled = True
-                cbFreeSpace.IsChecked = False
-                txtObj13.IsEnabled = True
-                txtTitle.Text = System.IO.File.ReadAllLines(filename)(0)
+                txtTitle.Text = System.IO.File.ReadAllLines(filename)(0) 'Title
                 txtObj01.Text = System.IO.File.ReadAllLines(filename)(1)
                 txtObj02.Text = System.IO.File.ReadAllLines(filename)(2)
                 txtObj03.Text = System.IO.File.ReadAllLines(filename)(3)
@@ -151,6 +150,12 @@ Class MainWindow
                 txtObj12.Text = System.IO.File.ReadAllLines(filename)(12)
                 If cbFreeSpace.IsChecked = False Then
                     txtObj13.Text = System.IO.File.ReadAllLines(filename)(13)
+                ElseIf cbFreeSpace.IsChecked = True Then
+                    fsvar = System.IO.File.ReadAllLines(filename)(13)
+                    txtObj13.Text = "*Free Space*"
+                    txtObj13.IsEnabled = False
+                    Debug.Write("fsvar:")
+                    Debug.WriteLine(fsvar)
                 ElseIf System.IO.File.ReadAllLines(filename)(13) = "*Free Space*" Then
                     txtObj13.Text = "*Free Space*"
                     cbFreeSpace.IsChecked = True
@@ -168,7 +173,6 @@ Class MainWindow
                 txtObj23.Text = System.IO.File.ReadAllLines(filename)(23)
                 txtObj24.Text = System.IO.File.ReadAllLines(filename)(24)
                 txtObj25.Text = System.IO.File.ReadAllLines(filename)(25)
-                cbFreeSpace.IsEnabled = False
 
             ElseIf File.ReadAllLines(filename).Count < 26 Then
                 errormsg = "Load error! Data line not enough"
@@ -328,13 +332,19 @@ Class MainWindow
     End Sub
 
     Private Sub CbFreeSpace_Checked(sender As Object, e As RoutedEventArgs) Handles cbFreeSpace.Checked
-        If cbFreeSpace.IsChecked = True Then
-            txtObj13.Text = "*Free Space*"
-            txtObj13.IsEnabled = False
-        Else
-            txtObj13.Text = ""
-            txtObj13.IsEnabled = True
-        End If
+        fsvar = txtObj13.Text
+        txtObj13.Text = "*Free Space*"
+        txtObj13.IsEnabled = False
+        Debug.Write("fsvar:")
+        Debug.WriteLine(fsvar)
+    End Sub
+
+    Private Sub CbFreeSpace_Unchecked(sender As Object, e As RoutedEventArgs) Handles cbFreeSpace.Unchecked
+        txtObj13.IsEnabled = True
+        txtObj13.Text = fsvar
+        fsvar = Nothing
+        Debug.Write("fsvar:")
+        Debug.WriteLine(fsvar)
     End Sub
 
     Private Sub BtnShuffle_Click(sender As Object, e As RoutedEventArgs) Handles btnShuffle.Click
@@ -361,7 +371,7 @@ Class MainWindow
                 If cbFreeSpace.IsChecked = False Then
                     tlist.Add(txtObj13.Text)
                 Else
-                    tlist.Add("?")
+                    tlist.Add(fsvar)
                 End If
                 tlist.Add(txtObj14.Text)
                 tlist.Add(txtObj15.Text)
@@ -378,44 +388,48 @@ Class MainWindow
 
 
                 Debug.Write("Before: ")
-                    For Each txtobj As String In tlist
-                        Debug.WriteLine(txtobj)
-                    Next txtobj
-                    Shuffle(tlist)
-                    Debug.Write("After: ")
-                    For Each txtobj As String In tlist
-                        Debug.WriteLine(txtobj)
-                    Next txtobj
+                For Each txtobj As String In tlist
+                    Debug.WriteLine(txtobj)
+                Next txtobj
+                Shuffle(tlist)
 
 
-                    txtObj01.Text = tlist(0)
-                    txtObj02.Text = tlist(1)
-                    txtObj03.Text = tlist(2)
-                    txtObj04.Text = tlist(3)
-                    txtObj05.Text = tlist(4)
-                    txtObj06.Text = tlist(5)
-                    txtObj07.Text = tlist(6)
-                    txtObj08.Text = tlist(7)
-                    txtObj09.Text = tlist(8)
-                    txtObj10.Text = tlist(9)
-                    txtObj11.Text = tlist(10)
-                    txtObj12.Text = tlist(11)
-                    If cbFreeSpace.IsChecked = False Then
-                        txtObj13.Text = tlist(12)
-                    End If
-                    txtObj14.Text = tlist(13)
-                    txtObj15.Text = tlist(14)
-                    txtObj16.Text = tlist(15)
-                    txtObj17.Text = tlist(16)
-                    txtObj18.Text = tlist(17)
-                    txtObj19.Text = tlist(18)
-                    txtObj20.Text = tlist(19)
-                    txtObj21.Text = tlist(20)
-                    txtObj22.Text = tlist(21)
-                    txtObj23.Text = tlist(22)
-                    txtObj24.Text = tlist(23)
-                    txtObj25.Text = tlist(24)
+                txtObj01.Text = tlist(0)
+                txtObj02.Text = tlist(1)
+                txtObj03.Text = tlist(2)
+                txtObj04.Text = tlist(3)
+                txtObj05.Text = tlist(4)
+                txtObj06.Text = tlist(5)
+                txtObj07.Text = tlist(6)
+                txtObj08.Text = tlist(7)
+                txtObj09.Text = tlist(8)
+                txtObj10.Text = tlist(9)
+                txtObj11.Text = tlist(10)
+                txtObj12.Text = tlist(11)
+                If cbFreeSpace.IsChecked = False Then
+                    txtObj13.Text = tlist(12)
                 Else
+                    fsvar = tlist(12) ' Move back to Free Space value
+                End If
+                txtObj14.Text = tlist(13)
+                txtObj15.Text = tlist(14)
+                txtObj16.Text = tlist(15)
+                txtObj17.Text = tlist(16)
+                txtObj18.Text = tlist(17)
+                txtObj19.Text = tlist(18)
+                txtObj20.Text = tlist(19)
+                txtObj21.Text = tlist(20)
+                txtObj22.Text = tlist(21)
+                txtObj23.Text = tlist(22)
+                txtObj24.Text = tlist(23)
+                txtObj25.Text = tlist(24)
+
+                Debug.Write("After: ")
+                For Each txtobj As String In tlist
+                    Debug.WriteLine(txtobj)
+                Next txtobj
+
+            Else
                     MsgBox("Operation canceled.", MsgBoxStyle.OkOnly, "Title")
             End If
         End If
@@ -432,4 +446,5 @@ Class MainWindow
             items(j) = temp
         Next n
     End Sub
+
 End Class
